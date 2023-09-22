@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="" href="./IMG/ sura.jpg">
+    <link rel="stylesheet" href="Estilos.CSS">
+    <title>Certificados tributarios</title>
+</head>
+
+<body>
+    <div class="container">
+        <img id="image"
+            src="https://www.gruposura.com/wp-content/uploads/2018/09/Segurostendencias-y-riesgos_color_pos_RGB.png"
+            alt="Logo">
+        <form id="formulario">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="tipoDocumento">Tipo de documento:</label>
+            <select id="tipoDocumento" name="tipoDocumento" required>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Cedula de ciudadania">Cédula de ciudadanía</option>
+                <option value="Cedula extranjeria">Cédula de extranjería</option>
+                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <label for="numeroDocumento">Número de documento:</label>
+            <input type="text" id="numeroDocumento" name="numeroDocumento" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="tipoSolucion">Tipo de Solución:</label>
+            <select id="tipoSolucion" name="tipoSolucion" required>
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="1">Pensión</option>
+                <option value="2">Fondo de ahorro</option>
+                <option value="3">Seguro de Educación</option>
+                <option value="4">Rentas Vitalicias</option>
+                <option value="5">Pensiones ARL</option>
+            </select>
+
+            <label for="tipoFormulario">Tipo de Formulario:</label>
+            <select id="tipoFormulario" name="tipoFormulario" required>
+                <!-- Opciones de acuerdo a la selección de tipoSolucion -->
+            </select>
+            <!-- 
+      <label for="adjunto">Adjuntar archivo:</label>
+      <input type="file" id="adjunto" name="adjunto">
+
+      esta cualidad es para enviar datos adjuntos
+
+      -->
+            <div class="boton">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    <div id="popup">
+        <div id="popup-content">
+            <p>Gracias por diligenciar el formulario. En aproximadamente 2 horas recibirás el certificado vía correo
+                electrónico.</p>
+            <button id="close-button">Cerrar</button>
+        </div>
+    </div>
+    
+<Script src="Back.Js"> </Script>
+
+</body>
+
+</html>

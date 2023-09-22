@@ -1,0 +1,109 @@
+
+@font-face {
+    font-family: "FSJoey-Medium";
+    src: url(FSJoey-Medium.otf);
+    
+    }
+
+:root{
+    --azul-oscuro-sura:#0033A0;
+    --verde-claro-sura:#ECF166;
+    --azul-claro-sura:#00AEC7;
+    --gris-claro-sura:#BBBCBC;
+    --blanco-sura:#FFFFFF;
+    --amarillo-tigre-sura:#FFD635;
+    --gris-sura:#54585A;
+    --negro-sura:#101820;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: "FSJoey-Medium",Arial, sans-serif;
+    text-align: left;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+
+  form {
+    width: 400px;
+    padding: 20px;
+    background-color:var(--gris-claro-sura);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: "FSJoey-Medium";
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  select, input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--blanco-sura);
+    color: var(--gris-sura);
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #0033A0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "FSJoey-Medium";
+  }
+  input[type="submit"]:hover{background-color:var(--azul-claro-sura)}
+
+  .boton{
+    justify-content: center;
+    display: flex;
+  }
+
+
+  #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:var(--azul-oscuro-sura);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+  }
+
+  #popup-content {
+    text-align: center;
+  }
+
+  #close-button {
+    background-color: var(--gris-claro-sura);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  #image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+  }
