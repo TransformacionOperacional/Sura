@@ -11,32 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      # Elimina las acciones de compilación y publicación de .NET Core
-      # - name: Set up .NET Core
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: '8.x'
-      #     include-prerelease: true
-
-      # - name: Build with dotnet
-      #   run: dotnet build --configuration Release
-
-      # - name: dotnet publish
-      #   run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
-      # - name: Upload artifact for deployment job
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: .net-app
-      #     path: ${{env.DOTNET_ROOT}}/myapp
-
-      # Agrega pasos para generar archivos HTML
+      # Pasos para generar archivos HTML
       - name: Generate HTML files
         run: |
-          # Ejecuta aquí los comandos necesarios para generar tus archivos HTML
-          # Por ejemplo:
           mkdir -p ./html-output
           echo "<html><body><h1>Hello, World!</h1></body></html>" > ./html-output/index.html
 
@@ -51,7 +31,6 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      # url: ${{ steps.deploy-to-webapp.outputs.webapp-url }} # Esta línea se mantendrá comentada porque no necesitas el URL de despliegue
 
     steps:
       - name: Download artifact from build job
@@ -69,7 +48,3 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'LABOAUTONOMIA'
-          # slot-name: 'Production' # Puedes omitir esta línea si no estás utilizando slots
-          # package: . # Esto no se necesita para desplegar archivos HTML, así que déjalo comentado
-          # Por lo general, con archivos HTML, despliegas los archivos en sí, no necesitas un "paquete"
-          # Si tus archivos HTML están en la raíz del repositorio, Azure los desplegará automáticamente
