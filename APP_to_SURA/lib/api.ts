@@ -70,6 +70,16 @@ const OPERATORS: Record<string, { password: string; operator: Operator }> = {
 // In-memory request storage
 const requests: Map<string, DocumentRequest> = new Map()
 
+export async function getSolicitudes() {
+  const res = await fetch("https://api-sura.azurewebsites.net/api/solicitudes");
+
+  if (!res.ok) {
+    throw new Error("Error consultando API");
+  }
+
+  return res.json();
+}
+
 // === OPERATOR AUTHENTICATION ===
 export async function loginOperator(username: string, password: string): Promise<LoginResult> {
   await delay(1200)
