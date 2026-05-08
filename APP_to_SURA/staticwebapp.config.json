@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/operaciones*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/admin*",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  }
+}
