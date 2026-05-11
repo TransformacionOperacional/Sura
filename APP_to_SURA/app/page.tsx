@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ArrowRight, Shield, Upload, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { appRoutes } from '@/lib/routes'
 
 export default function HomePage() {
   return (
@@ -19,7 +20,7 @@ export default function HomePage() {
             height={47}
             priority
           />
-          <Link href="/operaciones">
+          <Link href={appRoutes.operadores}>
             <Button variant="outline" className="gap-2">
               <Users className="w-4 h-4" />
               Acceso Operadores
@@ -53,7 +54,7 @@ export default function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Link href="/operaciones">
+              <Link href={appRoutes.operadores}>
                 <Button className="w-full gap-2">
                   Iniciar sesión
                   <ArrowRight className="w-4 h-4" />
@@ -77,7 +78,7 @@ export default function HomePage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Link href="/carga/demo-token-123">
+              <Link href={appRoutes.cargaDemo}>
                 <Button variant="outline" className="w-full gap-2">
                   Probar portal de demo
                   <ArrowRight className="w-4 h-4" />

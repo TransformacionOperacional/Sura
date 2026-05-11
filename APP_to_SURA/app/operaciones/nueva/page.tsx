@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { appRoutes } from '@/lib/routes'
 import { 
   User, 
   Mail, 
@@ -141,7 +142,7 @@ export default function NuevaSolicitudPage() {
     try {
       await sendEmail(createdRequest)
       setShowEmailModal(false)
-      router.push('/operaciones/solicitudes')
+      router.push(appRoutes.operaciones.solicitudes)
     } catch (error) {
       console.error('Error sending email:', error)
     } finally {

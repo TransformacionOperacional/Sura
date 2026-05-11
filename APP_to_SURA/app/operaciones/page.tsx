@@ -19,6 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { appRoutes } from '@/lib/routes'
 
 const stats = [
   { label: 'Solicitudes Pendientes', value: 12, icon: Clock, color: 'text-amber-500' },
@@ -97,7 +98,7 @@ export default function OperacionesDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card
           className="border-0 shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-          onClick={() => router.push('/operaciones/nueva')}
+          onClick={() => router.push(appRoutes.operaciones.nueva)}
         >
           <CardHeader>
             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
@@ -121,7 +122,7 @@ export default function OperacionesDashboard() {
 
         <Card
           className="border-0 shadow-md hover:shadow-lg transition-shadow cursor-pointer"
-          onClick={() => router.push('/operaciones/solicitudes')}
+          onClick={() => router.push(appRoutes.operaciones.solicitudes)}
         >
           <CardHeader>
             <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-4">

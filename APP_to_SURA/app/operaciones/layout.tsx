@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { OperatorSidebar } from '@/components/operator-sidebar'
 import { useAuth } from '@/lib/auth-context'
+import { appRoutes } from '@/lib/routes'
 import { Spinner } from '@/components/ui/spinner'
 
 export default function OperacionesLayout({
@@ -16,12 +17,12 @@ export default function OperacionesLayout({
   const { isAuthenticated } = useAuth()
 
   useEffect(() => {
-    if (!isAuthenticated && pathname !== '/operaciones') {
-      router.push('/')
+    if (!isAuthenticated && pathname !== appRoutes.operaciones.root) {
+      router.push(appRoutes.home)
     }
   }, [isAuthenticated, pathname, router])
 
-  if (!isAuthenticated && pathname !== '/operaciones') {
+  if (!isAuthenticated && pathname !== appRoutes.operaciones.root) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <Spinner className="size-8" />

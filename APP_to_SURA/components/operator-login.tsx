@@ -11,6 +11,7 @@ import { FieldGroup, Field, FieldLabel, FieldError } from '@/components/ui/field
 import { Spinner } from '@/components/ui/spinner'
 import { loginOperator } from '@/lib/api'
 import { useAuth } from '@/lib/auth-context'
+import { appRoutes } from '@/lib/routes'
 
 export function OperatorLogin() {
   const router = useRouter()
@@ -36,7 +37,7 @@ export function OperatorLogin() {
 
       if (result.success && result.operator) {
         login(result.operator)
-        router.push('/operaciones')
+        router.push(appRoutes.operadores)
       } else {
         setError(result.message)
       }

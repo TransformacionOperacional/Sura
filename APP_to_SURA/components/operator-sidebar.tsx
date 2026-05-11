@@ -13,6 +13,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useAuth } from '@/lib/auth-context'
+import { appRoutes } from '@/lib/routes'
 
 interface NavItem {
   label: string
@@ -21,10 +22,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Inicio', href: '/operaciones', icon: Home },
-  { label: 'Nueva Solicitud', href: '/operaciones/nueva', icon: FileText },
-  { label: 'Solicitudes', href: '/operaciones/solicitudes', icon: FolderOpen },
-  { label: 'Configuración', href: '/operaciones/configuracion', icon: Settings },
+  { label: 'Inicio', href: appRoutes.operaciones.root, icon: Home },
+  { label: 'Nueva Solicitud', href: appRoutes.operaciones.nueva, icon: FileText },
+  { label: 'Solicitudes', href: appRoutes.operaciones.solicitudes, icon: FolderOpen },
+  { label: 'Configuración', href: appRoutes.operaciones.configuracion, icon: Settings },
 ]
 
 export function OperatorSidebar() {
