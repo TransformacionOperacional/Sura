@@ -1,5 +1,12 @@
 {
-  "navigationFallback": {
-    "rewrite": "/index.html"
-  }
+  "routes": [
+    {
+      "route": "/operaciones*",
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/admin*",
+      "allowedRoles": ["authenticated"]
+    }
+  ]
 }
