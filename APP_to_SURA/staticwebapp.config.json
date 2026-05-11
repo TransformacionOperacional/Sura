@@ -1,21 +1,7 @@
 {
-  "routes": [
-    {
-      "route": "/operaciones*",
-      "allowedRoles": ["authenticated"]
-    },
-    {
-      "route": "/admin*",
-      "allowedRoles": ["authenticated"]
-    }
-  ],
+  "routes": [],
   "navigationFallback": {
     "rewrite": "/index.html"
-  },
-  "responseOverrides": {
-    "401": {
-      "redirect": "/.auth/login/aad",
-      "statusCode": 302
-    }
   }
+}
 }
