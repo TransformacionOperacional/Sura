@@ -10,6 +10,9 @@ const geistMono = Geist_Mono({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Portal de Cargue Documental',
   description: 'Portal de contingencia para validación de identidad y carga segura de documentos',
+  icons: {
+    icon: '/icon-light-32x32.png',
+  },
 }
 
 export default function RootLayout({
