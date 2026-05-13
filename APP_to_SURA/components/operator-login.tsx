@@ -37,7 +37,7 @@ export function OperatorLogin() {
 
       if (result.success && result.operator) {
         login(result.operator)
-        router.push(appRoutes.operadores)
+        router.push(appRoutes.operaciones.root)
       } else {
         setError(result.message)
       }
