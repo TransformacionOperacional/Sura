@@ -29,6 +29,24 @@ export default function OperacionesLayout({
   }, [])
 
   useEffect(() => {
+    if (isLocalhost) return
+
+    if (!isAuthReady) return
+
+    if (!isAuthenticated) {
+      router.replace(appRoutes.operadores)
+    }
+  }, [isAuthenticated, isAuthReady, isLocalhost, router])
+
+  if (!isAuthReady && !isLocalhost) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Spinner className="size-8" />
+      </div>
+    )
+  }
+  /*
+  useEffect(() => {
     if (!isAuthReady && !isLocalhost) return
 
     if (!isAuthenticated && !isLocalhost) {
@@ -43,7 +61,7 @@ export default function OperacionesLayout({
       </div>
     )
   }
-
+*/
   return (
     <div className="flex min-h-screen bg-background">
       <OperatorSidebar />
